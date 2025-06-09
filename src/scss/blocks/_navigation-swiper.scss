@@ -7,17 +7,6 @@
     overflow-x: hidden;
   }
 
-  &__wrapper {
-    margin-top: 24px;
-    margin-left: 16px;
-    @media (min-width: 768px) {
-      margin-top: 32px;
-    }
-    @media (min-width: 1440px) {
-      margin-top: 8px;
-    }
-  }
-
   &__list {
     width: max-content;
     display: flex;

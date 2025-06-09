@@ -11,12 +11,7 @@
     padding-right: 24px;
   }
 
-  &__wrapper {
-    margin-top: 24px;
-    @media (min-width: 1440px) {
-      margin-top: 42px;
-    }
-  }
+
   &__title {
     display: flex;
     border-left: 4px solid $color-secondary;

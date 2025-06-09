@@ -9,5 +9,9 @@
 @use "./blocks/navigation-bar";
 @use "./blocks/navigation-swiper";
 @use "./blocks/article";
+//@use "./blocks/burger-menu";
+//@use "./blocks/blur-overlay";
 //elements
-@use "./elements/round-icon";
+@use "./blocks/round-icon";
+@use "./blocks/logo";
+

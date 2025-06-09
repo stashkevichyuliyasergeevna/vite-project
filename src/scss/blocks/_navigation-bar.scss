@@ -25,14 +25,7 @@
     align-items: center;
     gap: 16px;
   }
-  &__logo {
-    &:hover,
-    &:focus {
-      transform: scale(1.05);
-      filter: contrast(1.2);
-      transition: transform 0.3s ease;
-    }
-  }
+
   &__right-wrapper {
     display: flex;
     flex-wrap: nowrap;
