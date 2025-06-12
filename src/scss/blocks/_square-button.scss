@@ -1,0 +1,18 @@
+@use "../global/mixin" as *;
+@use "../global/variables" as *;
+.square-button {
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include button-animation;
+  }
+}

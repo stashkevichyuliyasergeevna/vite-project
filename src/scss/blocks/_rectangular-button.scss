@@ -1,0 +1,32 @@
+@use "../global/mixin" as *;
+@use "../global/variables" as *;
+.rectangular-button {
+  width: 240px;
+  height: 72px;
+  padding: 16px;
+  border-radius: $standart-radius;
+  text-decoration: none;
+  border: 1px solid $grey;
+  cursor: pointer;
+  background-color: $white;
+  display: flex;
+  flex-wrap: nowrap;
+  flex: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include button-animation;
+  }
+
+  &--lenovo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: none;
+
+    background-image: (url(/public/images/logo_bitmap/Bitmap.svg));
+  }
+}

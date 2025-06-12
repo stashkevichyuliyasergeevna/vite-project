@@ -25,22 +25,6 @@
     align-items: center;
     gap: 16px;
   }
-
-  &__right-wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-
-    button:nth-child(-n + 3),
-    img {
-      display: none;
-      @media (min-width: 768px) {
-        display: flex;
-      }
-    }
-  }
   &__divider:first-of-type {
     display: none;
     @media (min-width: 768px) {
@@ -51,6 +35,21 @@
     display: flex;
     @media (min-width: 768px) {
       display: none;
+    }
+  }
+
+  &__right-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    li:nth-child(-n + 4) {
+      display: none;
+      @media (min-width: 768px) {
+        display: flex;
+      }
     }
   }
 }

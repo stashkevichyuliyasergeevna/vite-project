@@ -1,0 +1,33 @@
+.main {
+  &__navigation-swiper {
+    margin-top: 24px;
+    margin-left: 16px;
+    @media (min-width: 768px) {
+      margin-top: 32px;
+    }
+    @media (min-width: 1440px) {
+      margin-top: 8px;
+    }
+  }
+  &__article {
+    margin-top: 24px;
+    @media (min-width: 768px) {
+      margin-top: 32px;
+    }
+    @media (min-width: 1440px) {
+      margin-top: 16px;
+    }
+  }
+  &__title {
+    margin-top: 51px;
+  }
+  &__repair-menu {
+    margin: 16px 0 16px 16px;
+    @media (min-width: 768px) {
+      margin: 24px;
+    }
+    @media (min-width: 1440px) {
+      margin: 32px;
+    }
+  }
+}

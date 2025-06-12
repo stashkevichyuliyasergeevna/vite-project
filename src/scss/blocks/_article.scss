@@ -25,27 +25,18 @@
       padding: 0px;
     }
   }
-  
-  &__button {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: nowrap;
-    align-items: center;
-    margin-top: 16px;
+
+  &__read-more-button {
+      margin-top: 16px;
     @media (min-width: 768px) {
       margin-top: 14px;
-    }
-
-    input {
-      @include visually-hidden;
     }
   }
   &__image {
     width: 100%;
     height: auto;
     @media (min-width: 768px) {
-      border-radius: 6px;
+      border-radius: $standart-radius;
     }
   }
 }

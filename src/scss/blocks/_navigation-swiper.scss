@@ -1,10 +1,11 @@
 @use "../global/variables" as *;
 
 .navigation-swiper {
-  overflow-x: auto;
+  overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
   @media (min-width: 1440px) {
-    overflow-x: hidden;
+    display: flex;
+    overflow-x: auto;
   }
 
   &__list {
@@ -23,33 +24,35 @@
       overflow: visible;
       //max-width: 1120px;
     }
+  }
+  &__item {
+    box-sizing: border-box;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border: 2px solid transparent;
 
-    li {
-      box-sizing: border-box;
-      height: 40px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      border: 2px solid transparent;
-    }
-    li:hover,
-    li:focus,
-    li:active {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
       border: 2px solid $color-secondary;
-      border-radius: 6px;
+      border-radius: $standart-radius;
       background-color: $white;
     }
-    li > a {
-      width: auto;
-      padding: 8px 20px;
-      font-family: $ff-regular;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: -0.2px;
-      color: $grey;
-      white-space: nowrap;
-    }
+  }
+
+  &__link {
+    width: auto;
+    padding: 8px 20px;
+    font-family: $ff-regular;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: $grey;
+    white-space: nowrap;
   }
 }

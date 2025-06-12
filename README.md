@@ -7,4 +7,4 @@
 2.GitHub Pages: https://stashkevichyuliyasergeevna.github.io/vite-project/
 
 
-3.Макет: https://www.figma.com/design/3rqvXG3YwNupBvgTCMooiy/%D0%91%D0%BB%D0%BE%D0%BA-1.3--%D0%9F%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%B5%D1%82%D0%BE%D0%BA---%D0%91%D0%AD%D0%9C-%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5?node-id=0-729&t=GYbVjGw0CTWwvYZv-0
+3.Макет: https://www.figma.com/design/ttlPwrOE9PxIpxl3FqkIT1/Верстка-приемлемого-макета?node-id=0-312&p=f&t=a4LaRHJXGrvlgqJj-0

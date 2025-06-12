@@ -19,10 +19,85 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body class="body">
-    <nav class="navigation-bar">
+    <aside class="burger-menu">
+      <div class="burger-menu__wrapper">
+        <div class="burger-menu__main-content">
+          <header class="burger-menu__header">
+            <div class="burger-menu__header-wrapper">
+              <button
+                id="burgerClose"
+                class="round-button round-button--burger-close-button"
+                aria-label="Закрыть меню"
+              ></button>
+              <a class="logo" href="#" aria-label="Начальная страница CPS">
+                <img src="/public/images/Group.svg"
+              /></a>
+            </div>
+            <button
+              class="round-button round-button--search-button"
+              aria-label="Открыть меню"
+            ></button>
+          </header>
+          <ul class="burger-menu__nav">
+            <li class="active">
+              <a href="#">Ремонт техники</a>
+            </li>
+            <li>
+              <a href="#">Услуги и сервисы</a>
+            </li>
+            <li>
+              <a href="#">Корпоративным клиентам</a>
+            </li>
+            <li>
+              <a href="#">Продавцам техники</a>
+            </li>
+            <li>
+              <a href="#">Партнерам</a>
+            </li>
+            <li>
+              <a href="#">Производителям</a>
+            </li>
+            <li>
+              <a href="#">Наши сервисные центры</a>
+            </li>
+            <li>
+              <a href="#">Контакты</a>
+            </li>
+          </ul>
+        </div>
+        <footer class="burger-menu__footer">
+          <nav class="burger-menu__buttons">
+            <button
+              class="round-button round-button--call-button"
+              aria-label="Позвонить компании"
+            ></button>
+            <button
+              class="round-button round-button--chat-button"
+              aria-label="Написать компании"
+            ></button>
+            <button
+              class="round-button round-button--profile-button"
+              aria-label="Войти в свой кабинет"
+            ></button>
+          </nav>
+          <p class="burger-menu__mail">
+            <a href="mailto:mail@cps.com">mail@cps.com</a>
+          </p>
+          <p class="burger-menu__phone">
+            <a href="tel:88008908900">8 800 890 8900</a>
+          </p>
+          <div class="burger-menu__language">
+            <button aria-label="Выбрать русский язык">RU</button>
+            <button aria-label="Выбрать английский язык">EN</button>
+            <button aria-label="Выбрать китайский язык">CH</button>
+          </div>
+        </footer>
+      </div>
+    </aside>
+    <aside class="navigation-bar">
       <div class="navigation-bar__left-wrapper">
         <button
-          class="round-icon round-icon--burger-button"
+          class="round-button round-button--burger-button"
           aria-label="Открыть меню"
         ></button>
         <img
@@ -39,98 +114,145 @@
           src="/public/images/divider.svg"
         />
       </div>
-      <div class="navigation-bar__right-wrapper">
-        <button
-          class="round-icon round-icon--call-button"
-          aria-label="Позвонить компании"
-        ></button>
-        <button
-          class="round-icon round-icon--chat-button"
-          aria-label="Написать компании"
-        ></button>
-        <button
-          class="round-icon round-icon--profile-button"
-          aria-label="Войти в свой кабинет"
-        ></button>
-        <img alt="" src="/public/images/divider.svg" />
-        <button
-          class="round-icon round-icon--repair-button"
-          aria-label="Оставить заявку"
-        ></button>
-        <button
-          class="round-icon round-icon--checkstatus-button"
-          aria-label="Статус ремонта"
-        ></button>
-      </div>
-    </nav>
-    <div class="body__wrapper">
+      <ul class="navigation-bar__right-wrapper">
+        <li>
+          <button
+            class="round-button round-button--call-button"
+            aria-label="Позвонить компании"
+          ></button>
+        </li>
+        <li>
+          <button
+            class="round-button round-button--chat-button"
+            aria-label="Написать компании"
+          ></button>
+        </li>
+        <li>
+          <button
+            class="round-button round-button--profile-button"
+            aria-label="Войти в свой кабинет"
+          ></button>
+        </li>
+        <li aria-hidden="true">
+          <img alt="" src="/public/images/divider.svg" />
+        </li>
+        <li>
+          <button
+            class="round-button round-button--repair-button"
+            aria-label="Оставить заявку"
+          ></button>
+        </li>
+        <li>
+          <button
+            class="round-button round-button--checkstatus-button"
+            aria-label="Статус ремонта"
+          ></button>
+        </li>
+      </ul>
+    </aside>
+    <div class="body__main-thread">
       <header class="header body__header">
         <h1 class="header__title">Услуги и сервисы</h1>
         <nav class="header__nav">
-          <label
-            >Оставить заявку
-            <input
-              class="round-icon round-icon--repair-button"
-              type="button"
-              aria-label="Оставить заявку"
-            />
-          </label>
-          <label
-            >Статус ремонта
-            <input
-              class="round-icon round-icon--checkstatus-button"
-              type="button"
-              aria-label="Статус ремонта"
-            />
-          </label>
+          <button class="inscription-button inscription-button--repair">
+            Оставить заявку
+            <img class="round-button" />
+          </button>
+          <button class="inscription-button inscription-button--checkstatus">
+            Статус ремонта
+            <img class="round-button" />
+          </button>
         </nav>
       </header>
-      <main>
-        <nav class="navigation-swiper body__navigation-swiper">
+      <main class="main body__main">
+        <nav class="navigation-swiper main__navigation-swiper">
           <ul class="navigation-swiper__list">
-            <li>
-              <a href="#">Ремонтируемые устройства</a>
+            <li class="active navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Ремонтируемые устройства</a
+              >
             </li>
-            <li>
-              <a href="#">Ремонтируемые бренды</a>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Ремонтируемые бренды</a
+              >
             </li>
-            <li>
-              <a href="#">Цены на услуги</a>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#">Цены на услуги</a>
             </li>
-            <li>
-              <a href="#">Адреса сервисных центров</a>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Адреса сервисных центров</a
+              >
             </li>
-            <li>
-              <a href="#">Специальные цены</a>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#">Специальные цены</a>
             </li>
-            <li>
-              <a href="#">Отзывы</a>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#">Отзывы</a>
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#">Выезд на дом</a>
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Корпоративные услуги</a
+              >
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Гарантийное обслуживание</a
+              >
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Советы по уходу за техникой</a
+              >
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#"
+                >Обучающие видео и статьи</a
+              >
+            </li>
+            <li class="navigation-swiper__item">
+              <a class="navigation-swiper__link" href="#">Акции и скидки</a>
             </li>
           </ul>
         </nav>
-        <article class="article body__article">
+        <article class="article main__article">
           <div class="article__content">
-            <p class>
+            <p>
               Мы являемся авторизованным сервисным центром по ремонту техники
               Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с
               официальной гарантией производителя.
-              <br />
-              <br />
-              <span>
-                Мы успешно работаем с 1992 года и заслужили репутацию надежного
-                партнера, что подтверждает большое количество постоянных
-                клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям
-                и, в свою очередь, советуют нас родным и близким.
-              </span>
-              <br />
-              <br />
-              <span> Дополнительный текст. </span>
             </p>
-            <label class="article__button">
-              <input type="button" />
+            <br />
+            <p>
+              Мы успешно работаем с 1992 года и заслужили репутацию надежного
+              партнера, что подтверждает большое количество постоянных клиентов.
+              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою
+              очередь, советуют нас родным и близким.
+            </p>
+            <br />
+            <p class>
+              Мы используем только оригинальные запчасти и современное
+              оборудование, что позволяет нам обеспечивать высокий уровень
+              ремонта и долгосрочную надежность техники. Наши опытные
+              специалисты постоянно проходят обучение, чтобы быть в курсе
+              последних технологий и стандартов ремонта.
+            </p>
+            <br />
+            <p>
+              Помимо ремонта, мы предлагаем консультации по настройке и
+              оптимизации работы вашей техники Dell. Наша цель — сделать вашу
+              работу и пользовательский опыт комфортнее и эффективнее за счет
+              профессионального подхода и внимательного отношения к каждому
+              клиенту.
+            </p>
+            <button class="article__read-more-button read-more-button">
               <img src="/public/images/expand.svg" alt="" />
               Читать далее
-            </label>
+            </button>
           </div>
           <img
             class="article__image"
@@ -138,10 +260,114 @@
             alt="Фото логотипа компании"
           />
         </article>
+        <h2 class="title main__title">Ремонт техники различных брендов</h2>
+
+        <ul class="repair-menu main__repair-menu">
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--lenovo" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--samsung" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--apple" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--viewsonic" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--bosch" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--hp" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--acer" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--sony" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--lenovo" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--samsung" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--apple" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--viewsonic" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--bosch" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--hp" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--acer" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+          <li>
+            <button class="rectangular-button">
+              <img class="rectangular-button--sony" />
+              <img src="./public/images/go.svg" />
+            </button>
+          </li>
+        </ul>
+
+        <h2 class="title main__title">Ремонт различных видов техники</h2>
+
+        <h2 class="title main__title">Цены на услуги</h2>
       </main>
-      <footer></footer>
+      <footer class="footer body__footer"></footer>
     </div>
-    <!--<div class="blur-overlay"></div>-->
+    <div class="blur-overlay"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

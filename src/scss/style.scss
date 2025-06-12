@@ -1,17 +1,24 @@
 //global
 @use "global/variables" as *;
 @use "./global/normalize";
+@use "./global/reset";
 @use "./global/mixin";
 @use "./global/fonts";
 //blocks
+@use "./blocks/article";
+@use "./blocks/blur-overlay";
 @use "./blocks/body";
+@use "./blocks/burger-menu";
 @use "./blocks/header";
+@use "./blocks/inscription-button";
+@use "./blocks/logo";
+@use "./blocks/main";
 @use "./blocks/navigation-bar";
 @use "./blocks/navigation-swiper";
-@use "./blocks/article";
-//@use "./blocks/burger-menu";
-//@use "./blocks/blur-overlay";
-//elements
-@use "./blocks/round-icon";
-@use "./blocks/logo";
-
+@use "./blocks/oval-button";
+@use "./blocks/read-more-button";
+@use "./blocks/rectangular-button";
+@use "./blocks/repair-menu";
+@use "./blocks/round-button";
+@use "./blocks/square-button";
+@use "./blocks/title";
