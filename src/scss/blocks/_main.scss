@@ -21,10 +21,19 @@
   &__title {
     margin-top: 51px;
   }
-  &__repair-menu {
+  &__buttons-menu {
     margin: 16px 0 16px 16px;
     @media (min-width: 768px) {
       margin: 24px;
+    }
+    @media (min-width: 1440px) {
+      margin: 32px;
+    }
+  }
+  &__table-wrapper {
+    margin-top: 16px 8px;
+    @media (min-width: 768px) {
+      margin: 32px 24px;
     }
     @media (min-width: 1440px) {
       margin: 32px;

@@ -22,6 +22,7 @@
     box-shadow: none;
     position: static;
     z-index: $z-index-normal;
+    height: auto;
   }
 
   &__wrapper {
@@ -34,7 +35,7 @@
     flex-direction: column;
     justify-content: space-between;
     @media (min-width: 1440px) {
-      height: auto;
+      height: 100%;
       justify-content: start;
     }
   }
