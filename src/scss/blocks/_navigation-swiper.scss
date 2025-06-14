@@ -1,7 +1,9 @@
+@use "../global/mixin" as *;
 @use "../global/variables" as *;
-
 .navigation-swiper {
   overflow-x: scroll;
+  position: relative;
+  z-index: $z-index-normal;
   -webkit-overflow-scrolling: touch;
   @media (min-width: 1440px) {
     display: flex;

@@ -1,8 +1,17 @@
-.buttons-menu{
+.buttons-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible;
+  gap: 16px;
+  @media (min-width: 768px) {
+    overflow-x: visible;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     row-gap: 16px;
     column-gap: 32px;
+  }
 }

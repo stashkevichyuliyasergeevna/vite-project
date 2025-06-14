@@ -91,7 +91,7 @@ h3 {
   color: #1b1c21;
 }
 
-.p {
+p {
   font-family: $ff-regular;
   font-weight: 400;
   font-size: 14px;
@@ -101,26 +101,7 @@ h3 {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
-
-.wrapper {
-  width: auto;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-@media screen and (max-width: 768px) {
-  .hidden-on-small-screen {
-    display: none !important;
-  }
+button p {
+  font-size: 16px;
+  font-family: $ff-medium;
 }

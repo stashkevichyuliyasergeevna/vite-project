@@ -1,14 +1,18 @@
 @use "../global/mixin" as *;
 @use "../global/variables" as *;
-.read-more-button {
+.btn-read-more{
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: start;
   flex-wrap: nowrap;
   align-items: center;
   border: none;
   background-color: inherit;
+  text-align: left;
   cursor: pointer;
+  font-family: $ff-medium;
+  gap: 8px;
 
   &:hover,
   &:focus,

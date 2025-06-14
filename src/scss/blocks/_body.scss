@@ -14,7 +14,7 @@
   font-size: 16px;
   @media (min-width: 1440px) {
     flex-direction: row;
-    margin: 0 auto; //центрирование
+    margin: 0 auto;
   }
   &__main-thread {
     max-width: 1440px;
@@ -22,11 +22,16 @@
       max-width: 1120px;
     }
   }
-  //Отступы
   &__header {
     margin-top: 24px;
     @media (min-width: 1440px) {
       margin-top: 42px;
+    }
+  }
+  &__footer {
+    margin-top: 40px;
+    @media (min-width: 768px) {
+      margin-top: 50px;
     }
   }
 }
