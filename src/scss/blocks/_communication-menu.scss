@@ -1,0 +1,68 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+.communication-menu {
+  display: none;
+  overflow-y: auto;
+  z-index: $z-index-menu;
+  min-width: 320px;
+  max-width: auto;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  box-shadow: 15px 0 15px rgba(0, 0, 0, 0.2);
+  @media (min-width: 768px) {
+    display: none;
+    width: 512px;
+    //display: flex;
+    flex-direction: row;
+  }
+  &__close-wrapper {
+    padding-top: 24px;
+    padding-left: 16px;
+    background-color: $white;
+    @media (min-width: 768px) {
+      padding-left: 0px;
+      width: 72px;
+      padding-top: 40px;
+      background-color: initial;
+    }
+  }
+  &__main-wrapper {
+    padding-top: 24px;
+    background-color: $white;
+    width: 440px;
+    @media (min-width: 768px) {
+      box-shadow: -15px 0 15px rgba(0, 0, 0, 0.2);
+      padding-top: 40px;
+    }
+  }
+  &__title {
+    font-size: 24px;
+    border-left: 4px solid $color-secondary;
+    padding-left: 12px;
+    @media (min-width: 768px) {
+      padding-left: 30px;
+      margin-top: 0px;
+    }
+  }
+  &__form {
+  }
+  &__btn-round {
+    padding-left: 16px;
+    @media (min-width: 768px) {
+      padding-left: 0px;
+      //position: absolute;
+    }
+  }
+  &__text {
+    margin-top: 16px;
+    color: $grey;
+  }
+  &__pink-text {
+    color: $pink;
+  }
+  &__btn-oval {
+    margin-top: 24px;
+  }
+}
