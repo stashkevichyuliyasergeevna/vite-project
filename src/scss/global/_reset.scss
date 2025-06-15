@@ -91,7 +91,10 @@ h3 {
   color: #1b1c21;
 }
 
-p {
+p,
+dl,
+dt,
+dd {
   font-family: $ff-regular;
   font-weight: 400;
   font-size: 14px;

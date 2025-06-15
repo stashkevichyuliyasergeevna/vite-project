@@ -18,6 +18,12 @@
     width: 512px;
     background-color: initial;
   }
+  &--feedback-menu {
+    display: none;
+  }
+  &--call-me-menu {
+    display: none;
+  }
   &__wrapper {
     display: flex;
     flex-direction: row;

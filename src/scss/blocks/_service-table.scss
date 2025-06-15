@@ -1,10 +1,9 @@
 @use '../global/mixin' as *;
 @use '../global/variables' as *;
-// Задать границы элементам <tr>, <thead>, <tfoot> и <tbody> нельзя
-// поэтому задавайте их тегам <table>, <th> или <td>.
+
 .service-table {
-  border-spacing: 0;
   display: none;
+  border-spacing: 0;
   width: 100%;
   background-color: white;
   border: 1px solid inherit;

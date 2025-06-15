@@ -1,4 +1,5 @@
 .buttons-menu {
+  padding: 1px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -12,6 +13,6 @@
     flex-wrap: wrap;
     align-items: center;
     row-gap: 16px;
-    column-gap: 32px;
+    column-gap: 24px;
   }
 }
