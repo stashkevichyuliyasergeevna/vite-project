@@ -1,5 +1,5 @@
-@use "../global/mixin" as *;
-@use "../global/variables" as *;
+@use '../global/mixin' as *;
+@use '../global/variables' as *;
 // Задать границы элементам <tr>, <thead>, <tfoot> и <tbody> нельзя
 // поэтому задавайте их тегам <table>, <th> или <td>.
 .service-table {
@@ -39,7 +39,6 @@
     img {
       width: 95%;
       height: 2px;
-      
     }
   }
 }
