@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body class="body">
-    <aside class="burger-menu">
+    <aside class="burger-menu" id="burgerMenu">
       <div class="burger-menu__wrapper">
         <div class="burger-menu__main-content">
           <header class="burger-menu__header">
@@ -79,7 +79,7 @@
 
     <aside class="navigation-bar">
       <div class="navigation-bar__left-wrapper">
-        <button class="btn-round btn-round--burger-button" aria-label="Открыть меню"></button>
+        <button class="btn-round btn-round--burger-button" aria-label="Открыть меню" id="openBurgerMenu"></button>
         <img class="navigation-bar__divider" alt="" src="/public/images/divider.svg" />
         <a class="logo" href="#" aria-label="Начальная страница CPS"> <img src="/public/images/Group.svg" /></a>
         <img class="navigation-bar__divider" alt="" src="/public/images/divider.svg" />
@@ -105,7 +105,6 @@
         </li>
       </ul>
     </aside>
-
     <div class="body__main-thread">
       <header class="header body__header">
         <h1 class="header__title">Услуги и сервисы</h1>
@@ -165,24 +164,27 @@
         </div>
         <article class="article main__article">
           <div class="article__content">
-            <p>
+            <p class="article__first-p">
               Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
               отремонтировать свой ноутбук Dell с официальной гарантией производителя.
             </p>
-            <br />
-            <p>
+            <p class="article__second-p">
+              <br />
               Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое
-              количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,
-              советуют нас родным и близким.
+              количество постоянных клиентов.
             </p>
-            <br />
-            <p class>
+            <p class="article__third-p">
+              Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и
+              близким.</p
+            >
+            <p class="article__fourth-p">
+              <br />
               Мы используем только оригинальные запчасти и современное оборудование, что позволяет нам обеспечивать
               высокий уровень ремонта и долгосрочную надежность техники. Наши опытные специалисты постоянно проходят
               обучение, чтобы быть в курсе последних технологий и стандартов ремонта.
             </p>
-            <br />
-            <p>
+            <p class="article__fifth-p">
+              <br />
               Помимо ремонта, мы предлагаем консультации по настройке и оптимизации работы вашей техники Dell. Наша цель
               — сделать вашу работу и пользовательский опыт комфортнее и эффективнее за счет профессионального подхода и
               внимательного отношения к каждому клиенту.
@@ -663,7 +665,7 @@
         </div>
       </div>
     </aside>
-    <div class="blur-overlay"></div>
+    <div class="blur-overlay" id="blurOverlay"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

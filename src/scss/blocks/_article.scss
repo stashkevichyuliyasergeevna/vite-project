@@ -20,12 +20,30 @@
 
   &__content {
     padding: 0px 16px;
-
+    display: flex;
+    flex-direction: column;
     @media (min-width: 768px) {
       padding: 0px;
     }
   }
-
+  &__second-p {
+    display: none;
+    @media (min-width: 768px) {
+      display: unset;
+    }
+  }
+  &__third-p {
+    display: none;
+    @media (min-width: 1440px) {
+      display: unset;
+    }
+  }
+  &__fourth-p {
+    display: none;
+  }
+  &__fifth-p {
+    display: none;
+  }
   &__btn-read-more {
     margin-top: 16px;
     @media (min-width: 768px) {
