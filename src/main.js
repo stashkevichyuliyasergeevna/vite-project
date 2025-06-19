@@ -132,8 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (event) => {
     console.log('Клик по:', event.target)
     if (event.target === elements.openBurgerMenu) {
+      event.preventDefault()
       showElement(elements.burgerMenu)
     } else if (event.target === elements.closeBurgerMenu) {
+      event.preventDefault()
       hideElement(elements.burgerMenu)
     } else if (event.target === elements.openCallMenu2) {
       showElement(elements.callMenu)
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'btns'
       )
     } else if (event.target.closest('#showAllButtonSecond')) {
+      event.preventDefault()
       showHide(
         'second',
         elements.buttonsMenuSecond,
@@ -166,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'btns'
       )
     } else if (event.target.closest('#readMoreButton')) {
+      event.preventDefault()
       showHide('readme', elements.readMoreMenu, elements.readMoreButtonImg, elements.readMoreButtonText, 'read')
     }
   })

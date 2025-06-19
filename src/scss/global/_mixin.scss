@@ -4,7 +4,7 @@
   transform: scale(1.01);
   filter: contrast(1.2);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
 }
 @mixin contrast-text-animation {
   transform: scale(1.01);
