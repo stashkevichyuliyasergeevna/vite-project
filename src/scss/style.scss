@@ -4,6 +4,9 @@
 @use './global/reset';
 @use './global/mixin';
 @use './global/fonts';
+//for js
+@use './global/visually-hidden';
+@use './global/rotated';
 //blocks
 @use './blocks/after-effect-container';
 @use './blocks/article';

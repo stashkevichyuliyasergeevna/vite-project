@@ -1,8 +1,7 @@
 @use '../global/variables' as *;
 @use '../global/mixin' as *;
 .burger-menu {
-  //display: block;
-  display: none;
+  display: block;
   overflow-y: scroll;
   z-index: $z-index-menu;
   width: auto;

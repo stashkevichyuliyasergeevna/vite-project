@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/images/Group.svg" />
+    <link rel="icon" type="image/svg+xml" href="/images/Group.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ремонт техники различных брендов" />
     <title>Web-core-3-topic</title>
@@ -13,18 +13,18 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body class="body">
-    <aside class="burger-menu" id="burgerMenu">
+    <aside class="burger-menu visually-hidden" id="burgerMenu">
       <div class="burger-menu__wrapper">
         <div class="burger-menu__main-content">
           <header class="burger-menu__header">
             <div class="burger-menu__header-wrapper">
               <button
-                id="burgerClose"
+                id="closeBurgerMenu"
                 class="btn-round btn-round--burger-close-button"
                 aria-label="Закрыть меню"
               ></button>
-              <a class="logo" href="#" aria-label="Начальная страница CPS">
-                <img src="/public/images/Group.svg" alt=""
+              <a class="logo waves-effect waves-light btn-large" href="#" aria-label="Начальная страница CPS">
+                <img src="/images/Group.svg" alt=""
               /></a>
             </div>
             <button class="btn-round btn-round--search-button" aria-label="Открыть меню"></button>
@@ -58,8 +58,16 @@
         </div>
         <footer class="burger-menu__footer">
           <nav class="burger-menu__buttons">
-            <button class="btn-round btn-round--call-button" aria-label="Позвонить компании"></button>
-            <button class="btn-round btn-round--chat-button" aria-label="Написать компании"></button>
+            <button
+              class="btn-round btn-round--call-button"
+              aria-label="Позвонить компании"
+              id="openCallMenu1"
+            ></button>
+            <button
+              class="btn-round btn-round--chat-button"
+              aria-label="Написать компании"
+              id="openFeedbackMenu1"
+            ></button>
             <button class="btn-round btn-round--profile-button" aria-label="Войти в свой кабинет"></button>
           </nav>
           <p class="burger-menu__mail">
@@ -80,22 +88,26 @@
     <aside class="navigation-bar">
       <div class="navigation-bar__left-wrapper">
         <button class="btn-round btn-round--burger-button" aria-label="Открыть меню" id="openBurgerMenu"></button>
-        <img class="navigation-bar__divider" alt="" src="/public/images/divider.svg" />
-        <a class="logo" href="#" aria-label="Начальная страница CPS"> <img src="/public/images/Group.svg" /></a>
-        <img class="navigation-bar__divider" alt="" src="/public/images/divider.svg" />
+        <img class="navigation-bar__divider" alt="" src="/images/divider.svg" />
+        <a class="logo" href="#" aria-label="Начальная страница CPS"> <img src="/images/Group.svg" /></a>
+        <img class="navigation-bar__divider" alt="" src="/images/divider.svg" />
       </div>
       <ul class="navigation-bar__right-wrapper">
         <li>
-          <button class="btn-round btn-round--call-button" aria-label="Позвонить компании"></button>
+          <button class="btn-round btn-round--call-button" aria-label="Позвонить компании" id="openCallMenu2"></button>
         </li>
         <li>
-          <button class="btn-round btn-round--chat-button" aria-label="Написать компании"></button>
+          <button
+            class="btn-round btn-round--chat-button"
+            aria-label="Написать компании"
+            id="openFeedbackMenu2"
+          ></button>
         </li>
         <li>
           <button class="btn-round btn-round--profile-button" aria-label="Войти в свой кабинет"></button>
         </li>
         <li aria-hidden="true">
-          <img alt="" src="/public/images/divider.svg" />
+          <img alt="" src="/images/divider.svg" />
         </li>
         <li>
           <button class="btn-round btn-round--repair-button" aria-label="Оставить заявку"></button>
@@ -124,7 +136,9 @@
           <nav class="navigation-swiper main__navigation-swiper">
             <ul class="navigation-swiper__list">
               <li class="active navigation-swiper__item">
-                <a class="navigation-swiper__link" href="#">Ремонтируемые устройства</a>
+                <a class="navigation-swiper__link waves-effect waves-light btn-large" href="#"
+                  >Ремонтируемые устройства</a
+                >
               </li>
               <li class="navigation-swiper__item">
                 <a class="navigation-swiper__link" href="#">Ремонтируемые бренды</a>
@@ -164,41 +178,41 @@
         </div>
         <article class="article main__article">
           <div class="article__content">
-            <p class="article__first-p">
+            <p>
               Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете
               отремонтировать свой ноутбук Dell с официальной гарантией производителя.
             </p>
-            <p class="article__second-p">
+            <p>
               <br />
               Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое
               количество постоянных клиентов.
             </p>
-            <p class="article__third-p">
+            <p>
               Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и
               близким.</p
             >
-            <p class="article__fourth-p">
+            <p>
               <br />
               Мы используем только оригинальные запчасти и современное оборудование, что позволяет нам обеспечивать
               высокий уровень ремонта и долгосрочную надежность техники. Наши опытные специалисты постоянно проходят
               обучение, чтобы быть в курсе последних технологий и стандартов ремонта.
             </p>
-            <p class="article__fifth-p">
+            <p>
               <br />
               Помимо ремонта, мы предлагаем консультации по настройке и оптимизации работы вашей техники Dell. Наша цель
               — сделать вашу работу и пользовательский опыт комфортнее и эффективнее за счет профессионального подхода и
               внимательного отношения к каждому клиенту.
             </p>
-            <button class="article__btn-read-more btn-read-more">
-              <img src="/public/images/expand.svg" alt="" />
-              Читать далее
+            <button class="article__btn-read-more btn-read-more" id="readMoreButton">
+              <img src="/images/expand.svg" alt="" id="readMoreButtonImg" />
+              <span id="readMoreButtonText">Читать далее</span>
             </button>
           </div>
-          <img class="article__image" src="/public/images/PictureCopy.jpg" alt="Фото логотипа компании" />
+          <img class="article__image" src="/images/PictureCopy.jpg" alt="Фото логотипа компании" />
         </article>
         <h2 class="title main__title">Ремонт техники различных брендов</h2>
         <div class="after-effect-container">
-          <ul class="buttons-menu main__buttons-menu">
+          <ul class="buttons-menu main__buttons-menu buttons-menu--first">
             <li>
               <button class="btn-rectangular btn-rectangular--lenovo" aria-label="Ремонт техники Lenovo">
                 <img class="btn-round--go btn-round" alt="" />
@@ -281,13 +295,13 @@
             </li>
           </ul>
         </div>
-        <button class="main__btn-read-more btn-read-more">
-          <img src="/public/images/expand.svg" alt="" />
-          Показать все
+        <button class="main__btn-read-more btn-read-more" id="showAllButtonFirst">
+          <img src="/images/expand.svg" alt="" id="showAllButtonFirstImg" />
+          <span id="showAllButtonFirstText">Показать все</span>
         </button>
         <h2 class="title main__title">Ремонт различных видов техники</h2>
         <div class="after-effect-container">
-          <ul class="buttons-menu main__buttons-menu">
+          <ul class="buttons-menu main__buttons-menu buttons-menu--second">
             <li>
               <button class="btn-square" aria-label="Ремонт ноутбуков">
                 <p class="btn-square__text">Ремонт ноутбуков</p>
@@ -386,9 +400,9 @@
             </li>
           </ul>
         </div>
-        <button class="main__btn-read-more btn-read-more">
-          <img src="/public/images/expand.svg" alt="" />
-          Показать все
+        <button class="main__btn-read-more btn-read-more" id="showAllButtonSecond">
+          <img src="/images/expand.svg" alt="" id="showAllButtonSecondImg" />
+          <span id="showAllButtonSecondText">Показать все</span>
         </button>
         <h2 class="title main__title">Цены на услуги</h2>
         <div class="after-effect-container">
@@ -501,7 +515,7 @@
               </tr>
               <tr class="service-table__separator">
                 <td colspan="4">
-                  <img src="./public/images/separator.svg" alt="" />
+                  <img src="./images/separator.svg" alt="" />
                 </td>
               </tr>
               <tr class="service-table__tr">
@@ -514,7 +528,7 @@
               </tr>
               <tr class="service-table__separator">
                 <td colspan="4">
-                  <img src="./public/images/separator.svg" alt="" />
+                  <img src="./images/separator.svg" alt="" />
                 </td>
               </tr>
               <tr class="service-table__tr">
@@ -527,7 +541,7 @@
               </tr>
               <tr class="service-table__separator">
                 <td colspan="4">
-                  <img src="./public/images/separator.svg" alt="" />
+                  <img src="./images/separator.svg" alt="" />
                 </td>
               </tr>
               <tr class="service-table__tr">
@@ -540,7 +554,7 @@
               </tr>
               <tr class="service-table__separator">
                 <td colspan="4">
-                  <img src="./public/images/separator.svg" alt="" />
+                  <img src="./images/separator.svg" alt="" />
                 </td>
               </tr>
               <tr class="service-table__tr">
@@ -561,7 +575,7 @@
         </p>
         <button class="btn-read-more main__btn-read-more">
           Получить коммерческое предложение
-          <img src="./public/images/mini-next.svg" alt="" />
+          <img src="./images/mini-next.svg" alt="" />
         </button>
       </main>
       <footer class="footer body__footer">
@@ -576,13 +590,13 @@
       </footer>
     </div>
 
-    <aside class="communication-menu communication-menu--feedback-menu" id="feedback-menu">
+    <aside class="communication-menu communication-menu--feedback-menu visually-hidden" id="feedbackMenu">
       <div class="communication-menu__wrapper">
         <div class="communication-menu__close-button-wrapper">
           <button
             class="btn-round btn-round--burger-close-button communication-menu__btn-round"
             aria-label="Закрыть меню"
-            id="feedback-menu__close-button"
+            id="closeFeedbackMenu"
           ></button>
         </div>
         <div class="communication-menu__main-wrapper">
@@ -632,13 +646,13 @@
       </div>
     </aside>
 
-    <aside class="communication-menu communication-menu--call-me-menu" id="call-me-menu">
+    <aside class="communication-menu communication-menu--call-me-menu visually-hidden" id="callMenu">
       <div class="communication-menu__wrapper">
         <div class="communication-menu__close-button-wrapper">
           <button
             class="btn-round btn-round--burger-close-button communication-menu__btn-round"
             aria-label="Закрыть меню"
-            id="call-me__close-button"
+            id="closeCallMenu"
           ></button>
         </div>
         <div class="communication-menu__main-wrapper">
@@ -665,7 +679,7 @@
         </div>
       </div>
     </aside>
-    <div class="blur-overlay" id="blurOverlay"></div>
+    <div class="blur-overlay visually-hidden" id="blurOverlay"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
