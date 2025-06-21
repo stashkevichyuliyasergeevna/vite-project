@@ -30,6 +30,6 @@ export function initSwiper(containerSelector) {
 
 export function destroySwiper(swiper) {
   if (swiper && typeof swiper.destroy === 'function') {
-    swiper.destroy(true, true); // параметры: deleteInstance и cleanStyles
+    swiper.destroy(true, true) // параметры: deleteInstance и cleanStyles
   }
 }

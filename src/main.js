@@ -38,19 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     swiperContainerFirst: document.getElementById('swiperContainerFirst'),
     swiperContainerSecond: document.getElementById('swiperContainerSecond'),
     swiperContainerThird: document.getElementById('swiperContainerThird'),
-    // Все .buttons-menu 
-    buttonsMenus: document.querySelectorAll('.buttons-menu')
-    // Все paginations
+    // Все меню кнопок
+    buttonsMenus: document.querySelectorAll('.buttons-menu'),
+    // Все пагинаторы
+    paginationContainres: document.querySelectorAll('.swiper-pagination')
   }
-  // Созданы ли свайперы. Буду сохранять созданые свайперы в переменные, потому что только так к ним потом можно применять destroy
   const swipers = {
     first: null,
     second: null,
     third: null
   }
-  let areSwipersInitialized = false // флаг, что свайперы созданы
+  let areSwipersInitialized = false
 
-  //Функция создаст свайперы
   function initAllSwipers() {
     const width = window.innerWidth
     if (!areSwipersInitialized && width < 768) {
@@ -61,25 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  //Создаю свайперы
-  initAllSwipers()
-
-  // Запущу разрушение свайперов при width >= 768
   function destroyAllSwipers() {
     const width = window.innerWidth
     if (areSwipersInitialized && width >= 768) {
       if (swipers.first) destroySwiper(swipers.first)
       if (swipers.second) destroySwiper(swipers.second)
       if (swipers.third) destroySwiper(swipers.third)
+      elements.paginationContainres.forEach((element) => {
+        element.style.display = 'none'
+      })
 
-      // Обнуляем переменные
       swipers.first = null
       swipers.second = null
       swipers.third = null
       areSwipersInitialized = false
     }
   }
-  //Добавляю/убираю overflowX если свайперы были разрушены, скрываю стили пагинации
+
   function overflowForWrappers() {
     console.log('я запустилась')
     const width = window.innerWidth
@@ -95,14 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Нажата ли кнопка "Показать все" или "Читать далее"
   let menuStates = {
     first: false,
     second: false,
     readme: false
   }
 
-  // Определяю количество видимых кнопок и абзацев в зависимости от ширины экрана
   function counterButtonsAndP() {
     const width = window.innerWidth
     let visiblesP
@@ -126,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonsAndPRegulator('readme', elements.readMoreMenu, visiblesP)
   }
 
-  // Если не нажата кнопка "Показать все", то показываю только нужное количество кнопок в зависимости от ширины экрана
   function buttonsAndPRegulator(menuKey, menu, visibles) {
     if (!menuStates[menuKey]) {
       menu.forEach((elements, index) => {
@@ -170,20 +164,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Функция "Скрыть элемент"
   const hideElement = (element) => {
     element.classList.add('visually-hidden')
     elements.blurOverlay.classList.add('visually-hidden')
   }
 
-  //Функция "Показать элемент"
   const showElement = (element) => {
     element.classList.remove('visually-hidden')
     elements.blurOverlay.classList.remove('visually-hidden')
   }
 
-  //Изначально при отрисовке вызываю нужные функции
   counterButtonsAndP()
+  initAllSwipers()
 
   //Запускаю нужные функции при изменении размера окна браузера
   window.addEventListener('resize', () => {
