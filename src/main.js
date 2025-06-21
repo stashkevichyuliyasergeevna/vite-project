@@ -1,6 +1,8 @@
 import './scss/style.scss'
 import Swiper from 'swiper'
 import { initSwiper, destroySwiper } from './js/swiper'
+import { hideElement, showElement } from './js/showHide'
+
 document.addEventListener('DOMContentLoaded', () => {
   const elements = {
     //Блюр
@@ -78,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function overflowForWrappers() {
-    console.log('я запустилась')
     const width = window.innerWidth
     if (areSwipersInitialized === false && width < 768) {
       ;[swiperContainerFirst, swiperContainerSecond, swiperContainerThird].forEach((element) => {
@@ -133,11 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Обработчик для клика по кнопке "Показать/Скрыть"
-  // 1) Смотрю по флагу какой тип кнопки изменяем
-  // 2) Переключаю состояние расширения списка/абзацев
-  // 3) Показываю все кнопки, переворачиваю картинку на кнопке, изменяю текст
-  // 4) При повторном нажатии возвращаюсь к исходному состоянию — показываю только нужное количество кнопок в зависимости от ширины экрана, меняю стили назад
   function showHide(menuKey, menu, img, text, flag) {
     if (flag === 'btns') {
       menuStates[menuKey] = !menuStates[menuKey]
@@ -164,27 +160,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const hideElement = (element) => {
-    element.classList.add('visually-hidden')
-    elements.blurOverlay.classList.add('visually-hidden')
-  }
-
-  const showElement = (element) => {
-    element.classList.remove('visually-hidden')
-    elements.blurOverlay.classList.remove('visually-hidden')
-  }
-
   counterButtonsAndP()
   initAllSwipers()
 
-  //Запускаю нужные функции при изменении размера окна браузера
   window.addEventListener('resize', () => {
     counterButtonsAndP()
     destroyAllSwipers()
     overflowForWrappers()
   })
 
-  //Запускаю нужные функции при клике мышкой
   document.addEventListener('click', (event) => {
     console.log('Клик по:', event.target)
     if (event.target === elements.openBurgerMenu) {
@@ -228,4 +212,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
-//
