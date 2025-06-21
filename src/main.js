@@ -1,7 +1,6 @@
 import './scss/style.scss'
 import Swiper from 'swiper'
 import { initSwiper, destroySwiper } from './js/swiper'
-import { hideElement, showElement } from './js/showHide'
 
 document.addEventListener('DOMContentLoaded', () => {
   const elements = {
@@ -158,6 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
         text.innerHTML = `Читать далее`
       }
     }
+  }
+  function hideElement(element) {
+    element.classList.add('visually-hidden')
+    elements.blurOverlay.classList.add('visually-hidden')
+  }
+
+  function showElement(element) {
+    element.classList.remove('visually-hidden')
+    elements.blurOverlay.classList.remove('visually-hidden')
   }
 
   counterButtonsAndP()
