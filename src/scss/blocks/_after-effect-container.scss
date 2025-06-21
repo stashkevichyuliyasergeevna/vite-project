@@ -12,7 +12,7 @@
     background: linear-gradient(to left, $color-background, transparent);
     pointer-events: none;
     z-index: $z-index-effect;
-    @media (min-width: 1440px) {
+    @media (min-width: 768px) {
       display: none;
     }
   }

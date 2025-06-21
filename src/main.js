@@ -1,5 +1,6 @@
 import './scss/style.scss'
-
+import Swiper from 'swiper'
+import { initSwiper, destroySwiper } from './js/swiper'
 document.addEventListener('DOMContentLoaded', () => {
   const elements = {
     //Блюр
@@ -32,8 +33,68 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonsMenuSecond: document.querySelectorAll('.buttons-menu--second li'),
     showAllButtonSecond: document.getElementById('showAllButtonSecond'),
     showAllButtonSecondImg: document.getElementById('showAllButtonSecondImg'),
-    showAllButtonSecondText: document.getElementById('showAllButtonSecondText')
+    showAllButtonSecondText: document.getElementById('showAllButtonSecondText'),
+    //Контейнеры для свайперов
+    swiperContainerFirst: document.getElementById('swiperContainerFirst'),
+    swiperContainerSecond: document.getElementById('swiperContainerSecond'),
+    swiperContainerThird: document.getElementById('swiperContainerThird'),
+    // Все .buttons-menu 
+    buttonsMenus: document.querySelectorAll('.buttons-menu')
+    // Все paginations
   }
+  // Созданы ли свайперы. Буду сохранять созданые свайперы в переменные, потому что только так к ним потом можно применять destroy
+  const swipers = {
+    first: null,
+    second: null,
+    third: null
+  }
+  let areSwipersInitialized = false // флаг, что свайперы созданы
+
+  //Функция создаст свайперы
+  function initAllSwipers() {
+    const width = window.innerWidth
+    if (!areSwipersInitialized && width < 768) {
+      swipers.first = initSwiper(swiperContainerFirst)
+      swipers.second = initSwiper(swiperContainerSecond)
+      swipers.third = initSwiper(swiperContainerThird)
+      areSwipersInitialized = true
+    }
+  }
+
+  //Создаю свайперы
+  initAllSwipers()
+
+  // Запущу разрушение свайперов при width >= 768
+  function destroyAllSwipers() {
+    const width = window.innerWidth
+    if (areSwipersInitialized && width >= 768) {
+      if (swipers.first) destroySwiper(swipers.first)
+      if (swipers.second) destroySwiper(swipers.second)
+      if (swipers.third) destroySwiper(swipers.third)
+
+      // Обнуляем переменные
+      swipers.first = null
+      swipers.second = null
+      swipers.third = null
+      areSwipersInitialized = false
+    }
+  }
+  //Добавляю/убираю overflowX если свайперы были разрушены, скрываю стили пагинации
+  function overflowForWrappers() {
+    console.log('я запустилась')
+    const width = window.innerWidth
+    if (areSwipersInitialized === false && width < 768) {
+      ;[swiperContainerFirst, swiperContainerSecond, swiperContainerThird].forEach((element) => {
+        element.style.overflowX = 'scroll'
+      })
+    }
+    if (areSwipersInitialized === false && width >= 768) {
+      ;[swiperContainerFirst, swiperContainerSecond, swiperContainerThird].forEach((element) => {
+        element.style.overflowX = 'hidden'
+      })
+    }
+  }
+
   // Нажата ли кнопка "Показать все" или "Читать далее"
   let menuStates = {
     first: false,
@@ -47,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let visiblesP
     let visiblesButtonsInFirstMenu
     let visiblesButtonsInSecondMenu
-
     if (width >= 1080) {
       visiblesButtonsInFirstMenu = 8
       visiblesButtonsInSecondMenu = 4
@@ -61,13 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
       visiblesButtonsInSecondMenu = elements.buttonsMenuSecond.length
       visiblesP = 1
     }
-
     buttonsAndPRegulator('first', elements.buttonsMenuFirst, visiblesButtonsInFirstMenu)
     buttonsAndPRegulator('second', elements.buttonsMenuSecond, visiblesButtonsInSecondMenu)
     buttonsAndPRegulator('readme', elements.readMoreMenu, visiblesP)
   }
 
-  // Если не нажата кнопка "показать все", то показываю только нужное количество кнопок в зависимости от ширины экрана
+  // Если не нажата кнопка "Показать все", то показываю только нужное количество кнопок в зависимости от ширины экрана
   function buttonsAndPRegulator(menuKey, menu, visibles) {
     if (!menuStates[menuKey]) {
       menu.forEach((elements, index) => {
@@ -81,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Обработчик для клика по кнопке "Показать/Скрыть"
-  // 1) Смотрю какой тип кнопки изменяем
+  // 1) Смотрю по флагу какой тип кнопки изменяем
   // 2) Переключаю состояние расширения списка/абзацев
   // 3) Показываю все кнопки, переворачиваю картинку на кнопке, изменяю текст
   // 4) При повторном нажатии возвращаюсь к исходному состоянию — показываю только нужное количество кнопок в зависимости от ширины экрана, меняю стили назад
@@ -111,31 +170,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  //Обновляю видимость кнопок и абзацев при изменении размера окна браузера
-  window.addEventListener('resize', () => {
-    counterButtonsAndP()
-  })
-
-  //Изначально вызываю функции для установки правильного количества видимых кнопок и абзацев, основываясь на текущей ширине окна.
-  counterButtonsAndP()
   // Функция "Скрыть элемент"
   const hideElement = (element) => {
     element.classList.add('visually-hidden')
     elements.blurOverlay.classList.add('visually-hidden')
   }
+
   //Функция "Показать элемент"
   const showElement = (element) => {
     element.classList.remove('visually-hidden')
     elements.blurOverlay.classList.remove('visually-hidden')
   }
-  // Реакция на клики мышкой
+
+  //Изначально при отрисовке вызываю нужные функции
+  counterButtonsAndP()
+
+  //Запускаю нужные функции при изменении размера окна браузера
+  window.addEventListener('resize', () => {
+    counterButtonsAndP()
+    destroyAllSwipers()
+    overflowForWrappers()
+  })
+
+  //Запускаю нужные функции при клике мышкой
   document.addEventListener('click', (event) => {
     console.log('Клик по:', event.target)
     if (event.target === elements.openBurgerMenu) {
-      event.preventDefault()
       showElement(elements.burgerMenu)
     } else if (event.target === elements.closeBurgerMenu) {
-      event.preventDefault()
       hideElement(elements.burgerMenu)
     } else if (event.target === elements.openCallMenu2) {
       showElement(elements.callMenu)
@@ -151,6 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (event.target === elements.openFeedbackMenu1) {
       hideElement(elements.burgerMenu)
       showElement(elements.feedbackMenu)
+    } else if (event.target === elements.blurOverlay) {
+      hideElement(elements.burgerMenu), hideElement(elements.callMenu), hideElement(elements.feedbackMenu)
     } else if (event.target.closest('#showAllButtonFirst')) {
       showHide(
         'first',
@@ -160,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'btns'
       )
     } else if (event.target.closest('#showAllButtonSecond')) {
-      event.preventDefault()
       showHide(
         'second',
         elements.buttonsMenuSecond,
@@ -169,8 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'btns'
       )
     } else if (event.target.closest('#readMoreButton')) {
-      event.preventDefault()
       showHide('readme', elements.readMoreMenu, elements.readMoreButtonImg, elements.readMoreButtonText, 'read')
     }
   })
 })
+//

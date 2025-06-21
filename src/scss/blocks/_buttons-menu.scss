@@ -3,8 +3,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: scroll;
-  //overflow-y: visible;
+ // overflow-x: scroll;
   gap: 16px;
   @media (min-width: 768px) {
     overflow-x: visible;
